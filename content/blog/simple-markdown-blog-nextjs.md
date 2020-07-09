@@ -1,10 +1,9 @@
 ---
-title: Creating a Markdown Blog with Next.js
+title: Creating a Markdown bop with Next.js
 date: '2019-11-16T07:00:00.000Z'
 author: Kendall Strautman
 draft: false
 ---
-
 ## Tina + Next Part I
 
 _Want to skip to using Tina with Next.js? Jump to [Part II](https://tinacms.org/blog/using-tinacms-with-nextjs/) of this series._
@@ -13,7 +12,7 @@ Next.js is a React "metaframework" (a framework built on a framework) for develo
 
 **Next.js is simple and flexible.** Compared to a full-fledged static site generator, there are less prescriptive guiderails placed on developers in the implementation of an app or site. Due to this flexibility, this article shares just one perspective to approach building a simple, Markdown-based blog. Take what’s helpful 🤗, disregard the rest.
 
----
+***
 
 If you'd like to skip ahead and reference final versions of the starter, feel free to checkout the [finished implementation](https://github.com/kendallstrautman/brevifolia-nextjs).
 
@@ -41,11 +40,9 @@ After you clone the project and start the dev server, navigate to `http://localh
 
 As you can see, it's pretty simple at the moment. If you look at the project in your code editor, you will see the following directory structure:
 
-```
-components/
-data/
-pages/
-```
+    components/
+    data/
+    pages/
 
 ## Project Structure
 
@@ -135,9 +132,7 @@ Also, create a `public` folder in the root. This is where you will keep images.
 
 Next, we need to install a few packages that will process our Markdown files.
 
-```
-$ yarn add raw-loader gray-matter react-markdown
-```
+    $ yarn add raw-loader gray-matter react-markdown
 
 [Raw Loader](https://github.com/webpack-contrib/raw-loader) will process our Markdown files. [Gray Matter](https://github.com/jonschlinkert/gray-matter) will parse our yaml frontmatter values. And [React Markdown](https://github.com/rexxars/react-markdown) will parse and render the body of our Markdown files.
 
@@ -289,9 +284,9 @@ export async function getStaticProps() {
 
 This can be slightly complex to look at, but let’s take it one step at a time. Feel free to reference [this blog](https://blog.toukopeltomaa.com/next-js-markdown-blog#gets-posts-from-posts-folder) for the original code. It uses a function provided by Webpack, [require.context()](https://webpack.js.org/guides/dependency-management/#requirecontext), that allows us to create our own ‘context’ based on three parameters:
 
-- The directory to match within.
-- A boolean flag to include or exclude subdirectories.
-- A regular expression to match files against.
+* The directory to match within.
+* A boolean flag to include or exclude subdirectories.
+* A regular expression to match files against.
 
 ```javascript
 require.context(directory, (useSubdirectories = false), (regExp = /^\.\//))
